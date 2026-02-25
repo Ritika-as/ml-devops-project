@@ -26,3 +26,13 @@ jobs:
     - name: Run tests
       run: |
         python -m pytest
+
+    - name: Train model
+      run: |
+        python src/train.py
+
+    - name: Upload trained model
+      uses: actions/upload-artifact@v3
+      with:
+        name: trained-model
+        path: models/
